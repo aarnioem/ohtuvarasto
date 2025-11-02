@@ -60,12 +60,12 @@ class TestVarasto(unittest.TestCase):
         self.varasto.ota_varastosta(-1)
         self.assertAlmostEqual(self.varasto.paljonko_mahtuu(), 10)
 
-    def test_ota_kaikki_mita_voidaan(self):
-        self.varasto.lisaa_varastoon(5)
-        kaikki = self.varasto.ota_varastosta(15)
-        self.assertAlmostEqual(kaikki, 5)
-
     def test_str(self):
         # tavaraa 8, tilaa 2
         self.varasto.lisaa_varastoon(8)
         self.assertEqual(str(self.varasto), "saldo = 8, vielä tilaa 2")
+
+    def test_ota_kaikki_mita_voidaan(self):
+        self.varasto.lisaa_varastoon(5)
+        kaikki = self.varasto.ota_varastosta(15)
+        self.assertAlmostEqual(kaikki, 5)

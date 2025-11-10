@@ -9,8 +9,22 @@ def main():
     print(f"Mehuvarasto: {mehua}")
     print(f"Olutvarasto: {olutta}")
 
-    print("Lyhyempi teksti")
-    print("Järkevä sisennys")
+    print("Olut getterit:")
+    print(f"saldo = {olutta.saldo}")
+    print(f"tilavuus = {olutta.tilavuus}")
+    print(f"paljonko_mahtuu = {olutta.paljonko_mahtuu()}")
+
+    print("Mehu setterit:")
+    print("Lisätään 50.7")
+    mehua.lisaa_varastoon(50.7)
+    print(f"Mehuvarasto: {mehua}")
+    print("Otetaan 3.14")
+    mehua.ota_varastosta(3.14)
+    print(f"Mehuvarasto: {mehua}")
+
+    print("Tämän tekstin tarkoitus on olla aivan liian pitkä pylintin rivin pituussäännölle.")
+    if mehua.tilavuus > 50:
+       print("tyhmät sisennykset")
 
 
 if __name__ == "__main__":
